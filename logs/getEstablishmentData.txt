@@ -1,0 +1,214 @@
+🏪 Datos del establecimiento:
+c7831588-4953-40c5-bdcf-02809d8a2370 - Restaurante Almería Doner Kebab
+📍 Dirección: Calle Canónigo Molina Alonso, 31, 04004 Almería
+📞 Teléfono: 950933758
+Ratio de pedidos: 5
+🗓️ Horario:
+  - Domingo: Abierto
+    Horario: 00:00:00 - 23:59:00
+  - Jueves: Abierto
+    Horario: 00:00:00 - 23:59:00
+  - Lunes: Abierto
+    Horario: 00:00:00 - 23:59:00
+  - Martes: Abierto
+  - Miércoles: Abierto
+    Horario: 00:00:00 - 23:59:00
+  - Sábado: Abierto
+    Horario: 00:00:00 - 23:59:00
+  - Viernes: Abierto
+    Horario: 00:00:00 - 23:59:00
+🛍️ Productos:
+  - [76906d9a-91e4-47f7-9d47-a7c9ce392d54] Döner Kebab Ternera (main): 5.5 €
+  - [c0c0c6b1-0f56-4cc4-a068-64504d5e1ece] Döner Kebab Pollo (main): 5.5 €
+  - [8d39f286-a255-4e3c-b8b1-7e822e543d40] Döner Dürüm Ternera (main): 5.5 €
+  - [9d76115b-394d-453f-8f15-f8c011a7cb20] Döner Dürüm Pollo (main): 5.5 €
+  - [b398c6b2-22f1-4cf4-8049-7a8397e47eb1] Döner Dürüm Ternera, Grande (main): 6.5 €
+  - [ca77a0b7-3e91-43d3-a3e6-34f2a119088c] Döner Dürüm Pollo, Grande (main): 6.5 €
+  - [c52ae446-80a1-46a7-ad5f-de2f7edf2344] Döner Kebab Mixto (main): 6 €
+  - [78d6bd63-9d34-4961-80d1-253e621caded] Döner Dürüm Mixto (main): 6 €
+  - [534cac3d-509d-4c1f-bbba-666f83c9b66a] Döner Kebab Especial (main): 7 €
+  - [c8b7eeb0-d61c-4d6c-a550-1b16bf7490d3] Döner Dürüm Especial (main): 7 €
+  - [c0152da7-bac3-43b0-b454-ddcfe4fa4063] Döner Kebab Completo (main): 7.5 €
+  - [ba4ab9de-29d6-427d-9fb3-fb3d3dd78e5e] Döner Dürüm Completo (main): 7.5 €
+  - [ecf9313e-7388-4b8a-a6e8-ac635ff1c08b] Döner Kebab Vegetariano (main): 5 €
+  - [deca6f7d-1b64-46f1-bb0a-f35f2b1b4ffa] Döner Dürüm Vegetariano (main): 5 €
+  - [708d880d-73d1-4b0e-898e-37b333d4e851] Pizza Turca Pollo (main): 6 €
+  - [d40f09ad-3439-4439-8512-2883af725dea] Pizza Turca Ternera (main): 6 €
+  - [30c2d349-fb6a-41fb-8a88-c0580bbeba5c] Pizza Turca Mixta (main): 6 €
+  - [3c355780-fce7-46bf-aa9c-4daec4870eac] Pizza Turca solo Carne (main): 7 €
+  - [e61724e1-2bac-43bf-b72e-aef6615c7d31] Plato Pollo con Arroz (main): 7.5 €
+  - [2273b570-7583-43e0-bd50-9360c6eb1506] Plato Ternera con Arroz (main): 7.5 €
+  - [2a36faea-8366-4a1d-9f03-4d3d465bd315] Pollo, Patatas y Ensalada con Arroz (main): 7 €
+  - [6b17d331-e716-410b-81ce-6a8ea31a101e] Plato Pollo y Patatas (main): 6.5 €
+  - [5c01b931-b917-4c76-b1de-e6bb51958ffb] Plato Ternera y Patatas (main): 6.5 €
+  - [e603076d-8687-4db7-a16f-ca34b2f11d3a] Patatas Fritas (side): 2.5 €
+  - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7] Coca Cola, Lata (drink): 1.5 €
+  - [4a3be4ac-871d-4b5a-906d-df38496b1640] Coca Cola Zero, Lata (drink): 1.5 €
+  - [091acbbc-85ed-43ee-b5db-c49b3f35409a] Fanta Naranja, Lata (drink): 1.5 €
+  - [4d72bf79-a849-4474-bdfa-8a6232d3fc40] Fanta Limón, Lata (drink): 1.5 €
+  - [ae4096a7-7969-43d2-b106-2b87b41ae5c4] Pepsi Regular Refresco de Cola Lata 330ml (drink): 1.5 €
+  - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d] Sprite, Lata (drink): 1.5 €
+  - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b] Aquarius Limón, Lata (drink): 1.5 €
+  - [f6ffbb72-a224-4506-b562-2d79b667b18d] Aquarius Naranja, Lata (drink): 1.7 €
+  - [bb6ce2f5-044e-4d7e-a01b-d8a2721c54e2] Coca Cola, 2L (drink): 2.5 €
+  - [b5386da6-61f7-4908-9cf4-0f62db595066] Fanta Naranja, 2L (drink): 2.5 €
+  - [dc10d758-1186-419d-8aa4-c9df33fe6af8] Fanta Limón, 2L (drink): 2.5 €
+  - [da9b6578-8507-4000-9fff-369375acfc13] Agua, 1.5L (drink): 1.5 €
+  - [23f774bc-3f7e-4700-93ea-aa79b29d7712] Plato Mixto solo Carne y con queso (main): 7.5 €
+🍽️ Menús:
+  - Döner Kebab Ternera ({"main":1,"side":1,"drink":1}): 7.5 €
+    Productos:
+      - [76906d9a-91e4-47f7-9d47-a7c9ce392d54]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Döner Kebab Pollo ({"main":1,"side":1,"drink":1}): 7.5 €
+    Productos:
+      - [c0c0c6b1-0f56-4cc4-a068-64504d5e1ece]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Döner Dürüm Ternera ({"main":1,"side":1,"drink":1}): 7.5 €
+    Productos:
+      - [8d39f286-a255-4e3c-b8b1-7e822e543d40]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Döner Dürüm Pollo ({"main":1,"side":1,"drink":1}): 7.5 €
+    Productos:
+      - [9d76115b-394d-453f-8f15-f8c011a7cb20]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato Ternera, patatas y ensalada ({"main":1}): 8.5 €
+    Productos:
+      - [2a36faea-8366-4a1d-9f03-4d3d465bd315]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato de Ternera y patatas ({"main":1}): 8 €
+    Productos:
+      - [5c01b931-b917-4c76-b1de-e6bb51958ffb]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato Pollo y arroz ({"main":1}): 8 €
+    Productos:
+      - [e61724e1-2bac-43bf-b72e-aef6615c7d31]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato Pollo, patatas y ensalada ({"main":1}): 7 €
+    Productos:
+      - [6b17d331-e716-410b-81ce-6a8ea31a101e]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato Pollo y patatas ({"main":1}): 8 €
+    Productos:
+      - [6b17d331-e716-410b-81ce-6a8ea31a101e]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Plato de Ternera y arroz ({"main":1}): 8 €
+    Productos:
+      - [2273b570-7583-43e0-bd50-9360c6eb1506]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Döner Dürüm Ternera, Grande ({"main":1,"side":1,"drink":1}): 8.5 €
+    Productos:
+      - [b398c6b2-22f1-4cf4-8049-7a8397e47eb1]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]
+  - Döner Dürüm Pollo, Grande ({"main":1,"side":1,"drink":1}): 8.5 €
+    Productos:
+      - [ca77a0b7-3e91-43d3-a3e6-34f2a119088c]
+      - [e603076d-8687-4db7-a16f-ca34b2f11d3a]
+      - [5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7]
+      - [4a3be4ac-871d-4b5a-906d-df38496b1640]
+      - [091acbbc-85ed-43ee-b5db-c49b3f35409a]
+      - [4d72bf79-a849-4474-bdfa-8a6232d3fc40]
+      - [ae4096a7-7969-43d2-b106-2b87b41ae5c4]
+      - [fbec2261-8eb2-4d24-ae56-9dfd16388d5d]
+      - [101a1307-b5f6-4ab1-bc34-6ef1f7343d6b]
+      - [f6ffbb72-a224-4506-b562-2d79b667b18d]
+      - [da9b6578-8507-4000-9fff-369375acfc13]

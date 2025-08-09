@@ -1,4 +1,4 @@
-import supabase from './utils/supabase/client.js';
+import supabase from '../supabase/client.js';
 
 const getEstablishmentData = async (establishmentId: string = "c7831588-4953-40c5-bdcf-02809d8a2370"): Promise<EstablishmentData | null> => {
     const { data, error } = await supabase
@@ -56,6 +56,7 @@ const getMenusEstablishment = async (establishmentId: string): Promise<MenusData
     const { data, error } = await supabase
         .from('menus')
         .select(`
+            id_menu,
             name,
             price,
             description,
@@ -131,4 +132,4 @@ async function main() {
     });
 }
 
-main().catch(console.error);
+export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment };
