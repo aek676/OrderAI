@@ -13,10 +13,13 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^24.2.0",
+    "supabase": "^2.33.9",
+    "tsx": "^4.20.3",
     "typescript": "^5.9.2"
   },
   "dependencies": {
     "@google/genai": "^1.13.0",
+    "@supabase/supabase-js": "^2.54.0",
     "dotenv": "^17.2.1"
   }
 }

@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { createInterface } from 'readline/promises';
 import { FunctionCallingConfigMode, GoogleGenAI, Type, type FunctionDeclaration } from '@google/genai';
-import { type OrdersTable } from './types/orders.js';
+
 
 const addOrder: FunctionDeclaration = {
     name: 'add_order',
@@ -86,6 +86,8 @@ const addDetailsOrder: FunctionDeclaration = {
 
 
 async function main() {
+    
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
         console.error('❌ Error: GEMINI_API_KEY no está definida en el archivo .env');
@@ -93,6 +95,8 @@ async function main() {
     }
 
     const ai = new GoogleGenAI({ apiKey });
+
+
 
     const chat = ai.chats.create({
         model: 'gemini-2.0-flash',
@@ -119,11 +123,16 @@ async function main() {
 
                                 🍨 MENÚS DISPONIBLES:
                                 - MENU_001: Combo Dulce (Helado mediano + bebida + extra) - €7.50
-                                * Incluye: 1 helado mediano a elegir + 1 bebida + 1 extra
+                                  * Incluye: 1 helado mediano (PROD_002, PROD_005, o PROD_008) + 1 bebida (BEB_001, BEB_002, BEB_003, BEB_004)
+                                  * Debes usar selected_products: [ID_helado_elegido, ID_bebida_elegida]
+
                                 - MENU_002: Combo Familiar (2 helados grandes + 2 bebidas) - €13.00  
-                                * Incluye: 2 helados grandes a elegir + 2 bebidas
+                                  * Incluye: 2 helados grandes (PROD_003, PROD_006, o PROD_009) + 2 bebidas (BEB_001, BEB_002, BEB_003, BEB_004)
+                                  * Debes usar selected_products: [ID_helado1, ID_helado2, ID_bebida1, ID_bebida2]
+
                                 - MENU_003: Combo Infantil (Helado pequeño + zumo + sorpresa) - €5.50
-                                * Incluye: 1 helado pequeño + zumo + juguete sorpresa
+                                  * Incluye: 1 helado pequeño (PROD_001, PROD_004, o PROD_007) + zumo (BEB_003)
+                                  * Debes usar selected_products: [ID_helado_elegido, "BEB_003"]
 
                                 🎨 SABORES: chocolate, vainilla, fresa, mango, menta, pistacho, coco
                                 📦 ENVASES: vaso, cucurucho, tarrina  
@@ -149,9 +158,18 @@ async function main() {
                                 - Usa un id_chat único (puedes usar timestamp)
                                 - Para productos individuales: usa id_product y NO id_menu
                                 - Para menús: usa id_menu y selected_products con los IDs específicos elegidos
+                                - En selected_products SIEMPRE pon los IDs exactos de los productos/bebidas elegidos
                                 - NO proceses el pedido hasta tener TODA la información
                                 - Sé amigable y paciente, no asumas información
-                                - Confirma siempre antes de procesar`,
+                                - Confirma siempre antes de procesar
+
+                                📝 EJEMPLOS DE MENÚS:
+                                - Si piden MENU_001 con helado de chocolate mediano y agua:
+                                  selected_products: ["PROD_002", "BEB_001"]
+                                - Si piden MENU_002 con 2 helados grandes de vainilla y 2 refrescos:
+                                  selected_products: ["PROD_003", "PROD_003", "BEB_002", "BEB_002"]
+                                - Si piden MENU_003 con helado pequeño de fresa:
+                                  selected_products: ["PROD_001", "BEB_003"]`,
             tools: [{
                 functionDeclarations: [addOrder, addDetailsOrder]
             }],
