@@ -76,6 +76,21 @@ const getMenusEstablishment = async (establishmentId: string): Promise<MenusData
     return data as MenusData[];
 }
 
+const loadHistoryRows = async (idChat: string): Promise<MessageData[] | null> => {
+    const { data, error } = await supabase
+        .from('messages')
+        .select()
+        .eq('id_chat', idChat)
+        .order('created_at', { ascending: true });
+
+    if (error) {
+        console.error('❌ Error al cargar el historial de mensajes:', error);
+        return null;
+    }
+
+    return data as MessageData[];
+}
+
 const insertOrder = async (order: OrderData): Promise<any> => {
     const { data, error, status } = await supabase
         .from('orders')
@@ -94,4 +109,13 @@ const insertDetailsOrder = async (details: DetailsOrder): Promise<any> => {
     return { data, error, status };
 }
 
-export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment, insertOrder, insertDetailsOrder };
+const saveMessage = async (message: MessageInsert) => {
+    const { data, error } = await supabase
+        .from('messages')
+        .insert(message)
+        .select();
+
+    return { data, error };
+}
+
+export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment, insertOrder, insertDetailsOrder, saveMessage, loadHistoryRows };

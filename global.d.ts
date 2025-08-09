@@ -11,4 +11,7 @@ declare global {
     };
     type OrderData = Database['public']['Tables']['orders']['Insert'];
     type DetailsOrder = Database['public']['Tables']['details_order']['Insert'];
+    type RoleDB = 'user' | 'assistant' | 'function';
+    type MessageData = Database['public']['Tables']['messages']['Row'];
+    type MessageInsert = Database['public']['Tables']['messages']['Insert'];
 }

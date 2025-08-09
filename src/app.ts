@@ -6,11 +6,14 @@ import {
     GoogleGenAI,
     Type,
     type FunctionDeclaration,
+    type Part,
+    type PartUnion,
 } from '@google/genai';
 
-import { insertDetailsOrder, insertOrder } from '../utils/services/databaseRepository.js';
+import { insertDetailsOrder, insertOrder, loadHistoryRows, saveMessage } from '../utils/services/databaseRepository.js';
 
 import { buildSnapshot, type Snapshot } from './snapshot.js';
+import { rowsToGenAiHistory } from '../utils/services/history-mapping.js';
 
 // ======================
 // IDs inyectados (ENV/UI/cliente)
@@ -149,8 +152,12 @@ async function main() {
 
     const ai = new GoogleGenAI({ apiKey });
 
+    const rows = await loadHistoryRows(idChatFromClient);
+    const history = rowsToGenAiHistory((rows ?? []).map(r => ({ role: r.role, message: r.message })));
+
     const chat = ai.chats.create({
         model: 'gemini-2.0-flash',
+        history: history,
         config: {
             systemInstruction: `
                                 Eres el asistente de pedidos.
@@ -199,6 +206,9 @@ async function main() {
     // -------- DRY: un solo handler para TODAS las function calls --------
     async function handleFunctionCalls(response: any) {
         while (response.functionCalls && response.functionCalls.length > 0) {
+            const parts: PartUnion[] = []; // ✅
+
+
             for (const functionCall of response.functionCalls) {
                 console.log(`🔧 Ejecutando función: ${functionCall.name}`);
 
@@ -206,14 +216,20 @@ async function main() {
                     try {
                         const snapshot = await buildSnapshot(idEstablishmentFromClient);
                         lastSnapshot = snapshot; // cachea
-                        response = await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: snapshot } },
+                        parts.push({ functionResponse: { name: functionCall.name, response: snapshot as unknown as Record<string, unknown> } });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({ name: functionCall.name, response: snapshot }),
                         });
                         console.log(`📦 Snapshot enviado: ${snapshot.name} (${snapshot.id_establishment}) @ ${snapshot.updated_at}\n`);
                     } catch (e) {
                         console.error('❌ Error construyendo snapshot:', e);
-                        response = await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } } },
+                        parts.push({ functionResponse: { name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } } });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({ name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } }),
                         });
                     }
                 }
@@ -221,8 +237,11 @@ async function main() {
                 else if (functionCall.name === 'add_order') {
                     if (currentOrderId) {
                         console.warn('⚠️ Ya hay un pedido activo. No se puede crear otro hasta completar el actual.');
-                        response = await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } },
+                        parts.push({ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({ name: functionCall.name, response: { id_order: currentOrderId } }),
                         });
                         continue;
                     }
@@ -246,8 +265,11 @@ async function main() {
                     }
                     if (!safeArgs.is_pickup && !safeArgs.address) {
                         // Opción B: rechazas si falta dirección en delivery
-                        await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } } },
+                        parts.push({ functionResponse: { name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } } });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({ name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } }),
                         });
                         continue;
                     }
@@ -258,16 +280,22 @@ async function main() {
 
                     if (status !== 201) {
                         console.error('❌ Error creando pedido:', JSON.stringify(error, null, 2));
-                        response = await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: { success: false, error: error.message } } },
+                        parts.push({ functionResponse: { name: functionCall.name, response: { success: false, error: error.message } } });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({ name: functionCall.name, response: { success: false, error: error.message } }),
                         });
                         continue;
                     }
 
                     currentOrderId = data[0].id_order; // guarda el ID del pedido actual
 
-                    response = await chat.sendMessage({
-                        message: { functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } },
+                    parts.push({ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } });
+                    await saveMessage({
+                        id_chat: idChatFromClient,
+                        role: 'function',
+                        message: JSON.stringify({ name: functionCall.name, response: { id_order: currentOrderId } }),
                     });
 
                     console.log(`✅ Pedido creado | id_order=${currentOrderId} | id_chat=${safeArgs.id_chat} | id_establishment=${safeArgs.id_establishment}\n`);
@@ -279,8 +307,19 @@ async function main() {
                     const details = Array.isArray(args.details) ? args.details : [];
 
                     if (!currentOrderId) {
-                        await chat.sendMessage({
-                            message: { functionResponse: { name: functionCall.name, response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' } } },
+                        parts.push({
+                            functionResponse: {
+                                name: functionCall.name,
+                                response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' },
+                            },
+                        });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({
+                                name: functionCall.name,
+                                response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' },
+                            }),
                         });
                         continue;
                     }
@@ -306,13 +345,19 @@ async function main() {
                     const validation = validateMenuItems(snapshot, details);
                     if (!validation.ok) {
                         console.warn('❌ Validación fallida:', validation.error);
-                        response = await chat.sendMessage({
-                            message: {
-                                functionResponse: {
-                                    name: functionCall.name,
-                                    response: { success: false, message: validation.error },
-                                },
+                        parts.push({
+                            functionResponse: {
+                                name: functionCall.name,
+                                response: { success: false, message: validation.error },
                             },
+                        });
+                        await saveMessage({
+                            id_chat: idChatFromClient,
+                            role: 'function',
+                            message: JSON.stringify({
+                                name: functionCall.name,
+                                response: { success: false, message: validation.error },
+                            }),
                         });
                         continue;
                     }
@@ -321,34 +366,30 @@ async function main() {
 
                     const { data, error, status } = await insertDetailsOrder(details as DetailsOrder);
 
-                    if (status !== 201) {
-                        console.error('❌ Error añadiendo detalles del pedido:', JSON.stringify(error, null, 2));
-                        response = await chat.sendMessage({
-                            message: {
-                                functionResponse: {
-                                    name: functionCall.name,
-                                    response: { success: false, error: error.message },
-                                },
-                            },
-                        });
-                        continue;
-                    }
-
-                    response = await chat.sendMessage({
-                        message: {
-                            functionResponse: {
-                                name: functionCall.name,
-                                response: { success: true, message: 'Detalles del pedido añadidos correctamente' },
-                            },
-                        },
+                    const resp = status !== 201
+                        ? { success: false, error: error.message }
+                        : { success: true, message: 'Detalles del pedido añadidos correctamente' };
+                    parts.push({ functionResponse: { name: functionCall.name, response: resp } });
+                    await saveMessage({
+                        id_chat: idChatFromClient,
+                        role: 'function',
+                        message: JSON.stringify({ name: functionCall.name, response: resp }),
                     });
 
                     console.log('✅ Detalles del pedido añadidos correctamente\n');
                 }
             }
-        }
+            if (parts.length > 0) {
+                response = await chat.sendMessage({ message: parts });
+            } else {
+                break;
+            }
 
-        if (response.text) console.log(`🤖 Asistente: ${response.text}\n`);
+        }
+        if (response.text) {
+            console.log(`🤖 Asistente: ${response.text}\n`);
+            await saveMessage({ id_chat: idChatFromClient, role: 'model', message: response.text });
+        }
         return response;
     }
 
@@ -372,6 +413,11 @@ async function main() {
         mensajesAcumulados = [];
 
         try {
+            await saveMessage({
+                id_chat: idChatFromClient,
+                role: 'user',
+                message: mensajeCompleto,
+            });
             let response = await chat.sendMessage({ message: mensajeCompleto });
             await handleFunctionCalls(response);
         } catch (error) {
