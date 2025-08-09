@@ -9,4 +9,6 @@ declare global {
     type MenusData = Database['public']['Tables']['menus']['Row'] & {
         menu_product: Database['public']['Tables']['menu_product']['Row'][]
     };
+    type OrderData = Database['public']['Tables']['orders']['Insert'];
+    type DetailsOrder = Database['public']['Tables']['details_order']['Insert'];
 }

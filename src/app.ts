@@ -8,14 +8,15 @@ import {
     type FunctionDeclaration,
 } from '@google/genai';
 
+import { insertDetailsOrder, insertOrder } from '../utils/services/databaseRepository.js';
+
 import { buildSnapshot, type Snapshot } from './snapshot.js';
 
 // ======================
 // IDs inyectados (ENV/UI/cliente)
 // ======================
-const idChatFromClient = process.env.ID_CHAT || `CHAT_${Date.now()}`;
-const idEstablishmentFromClient =
-    process.env.ID_ESTABLISHMENT || 'c7831588-4953-40c5-bdcf-02809d8a2370';
+const idChatFromClient = '855e9331-7bb6-434c-81e6-56d951f6116b';
+const idEstablishmentFromClient = 'c7831588-4953-40c5-bdcf-02809d8a2370';
 
 // ======================
 // Tools (function declarations)
@@ -83,6 +84,7 @@ const addDetailsOrder: FunctionDeclaration = {
 // Estado en memoria
 // ======================
 let lastSnapshot: Snapshot | null = null;
+let currentOrderId: string | null = null;
 
 // ======================
 // Helpers de validación/coerción
@@ -180,6 +182,9 @@ async function main() {
                                 - Si is_pickup=false, pide dirección.
                                 - Confirma TODO antes de procesar.
                                 - Usa "add_order" y "add_details_order" para crear pedidos.
+                                - No llames a "add_order" más de una vez por pedido. Si "add_details_order" falla, corrige las selecciones y vuelve a llamar a "add_details_order" para el MISMO pedido (no crees uno nuevo).
+                                - Si el usuario proporciona dirección, considera que es a domicilio (is_pickup=false). Si dice "recoger", no solicites ni uses dirección.
+
 
                                 Política de privacidad (MUY IMPORTANTE):
                                 - NUNCA muestres IDs internos (UUID de productos, menús, pedidos, id_chat, etc.) en los mensajes al cliente.
@@ -214,36 +219,73 @@ async function main() {
                 }
 
                 else if (functionCall.name === 'add_order') {
+                    if (currentOrderId) {
+                        console.warn('⚠️ Ya hay un pedido activo. No se puede crear otro hasta completar el actual.');
+                        response = await chat.sendMessage({
+                            message: { functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } },
+                        });
+                        continue;
+                    }
+
                     console.log('📋 add_order(args) propuestos:', JSON.stringify(functionCall.args, null, 2));
 
                     const rawArgs = functionCall.args as Partial<AddOrderArgs>;
-                    const safeArgs = {
+                    const safeArgs: OrderData = {
                         id_chat: idChatFromClient,
                         id_establishment: idEstablishmentFromClient,
                         name: rawArgs.name ?? '',
                         is_pickup: rawArgs.is_pickup ?? true,
-                        address: rawArgs.address,
+                        address: rawArgs.address ?? null,
                     };
 
-                    if (safeArgs.is_pickup === false && !safeArgs.address) {
-                        console.warn('⚠️ Pedido a domicilio sin dirección. El asistente debe pedirla antes de continuar.');
+                    // Normaliza/valida coherencia pickup/delivery
+                    if (safeArgs.address && safeArgs.is_pickup === true) {
+                        // Opción A: corriges automáticamente
+                        console.warn('⚠️ is_pickup=true pero viene address. Corrigiendo a is_pickup=false (domicilio).');
+                        safeArgs.is_pickup = false;
+                    }
+                    if (!safeArgs.is_pickup && !safeArgs.address) {
+                        // Opción B: rechazas si falta dirección en delivery
+                        await chat.sendMessage({
+                            message: { functionResponse: { name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } } },
+                        });
+                        continue;
                     }
 
-                    // TODO: crea el pedido en tu backend y obtén id real
-                    const orderId = `ORDER_${Date.now()}`;
+                    const { data, error, status } = await insertOrder(safeArgs);
+
+                    console.log('📝 Pedido insertado:', JSON.stringify(data, null, 2));
+
+                    if (status !== 201) {
+                        console.error('❌ Error creando pedido:', JSON.stringify(error, null, 2));
+                        response = await chat.sendMessage({
+                            message: { functionResponse: { name: functionCall.name, response: { success: false, error: error.message } } },
+                        });
+                        continue;
+                    }
+
+                    currentOrderId = data[0].id_order; // guarda el ID del pedido actual
 
                     response = await chat.sendMessage({
-                        message: { functionResponse: { name: functionCall.name, response: { id_order: orderId } } },
+                        message: { functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } },
                     });
 
-                    console.log(`✅ Pedido creado | id_order=${orderId} | id_chat=${safeArgs.id_chat} | id_establishment=${safeArgs.id_establishment}\n`);
+                    console.log(`✅ Pedido creado | id_order=${currentOrderId} | id_chat=${safeArgs.id_chat} | id_establishment=${safeArgs.id_establishment}\n`);
                 }
-
                 else if (functionCall.name === 'add_details_order') {
                     console.log('🍨 add_details_order(args):', JSON.stringify(functionCall.args, null, 2));
 
                     const args = functionCall.args as any;
                     const details = Array.isArray(args.details) ? args.details : [];
+
+                    if (!currentOrderId) {
+                        await chat.sendMessage({
+                            message: { functionResponse: { name: functionCall.name, response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' } } },
+                        });
+                        continue;
+                    }
+                    // Fuerza que todos los detalles apunten al pedido abierto
+                    for (const d of details) d.id_order = currentOrderId;
 
                     // Asegura snapshot
                     const snapshot = lastSnapshot ?? await buildSnapshot(idEstablishmentFromClient);
@@ -276,6 +318,21 @@ async function main() {
                     }
 
                     // TODO: aquí puedes persistir los detalles en tu backend
+
+                    const { data, error, status } = await insertDetailsOrder(details as DetailsOrder);
+
+                    if (status !== 201) {
+                        console.error('❌ Error añadiendo detalles del pedido:', JSON.stringify(error, null, 2));
+                        response = await chat.sendMessage({
+                            message: {
+                                functionResponse: {
+                                    name: functionCall.name,
+                                    response: { success: false, error: error.message },
+                                },
+                            },
+                        });
+                        continue;
+                    }
 
                     response = await chat.sendMessage({
                         message: {
@@ -320,6 +377,9 @@ async function main() {
         } catch (error) {
             console.error('❌ Error al procesar el mensaje:', error);
             console.log('Por favor, intenta de nuevo.\n');
+            await chat.sendMessage({
+                message: { text: 'Ocurrió un error al procesar tu mensaje. Por favor, intenta de nuevo.' },
+            });
         }
     };
 

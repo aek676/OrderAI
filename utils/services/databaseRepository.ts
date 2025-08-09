@@ -76,60 +76,22 @@ const getMenusEstablishment = async (establishmentId: string): Promise<MenusData
     return data as MenusData[];
 }
 
-async function main() {
-    const establishment = await getEstablishmentData();
-    if (!establishment) {
-        console.error('❌ No se pudo obtener el establecimiento.');
-        return;
-    }
+const insertOrder = async (order: OrderData): Promise<any> => {
+    const { data, error, status } = await supabase
+        .from('orders')
+        .insert(order)
+        .select();
 
-    const [schedule, products, menus] = await Promise.all([
-        getScheduleEstablishment(establishment.id_establishment),
-        getProductsEstablishment(establishment.id_establishment),
-        getMenusEstablishment(establishment.id_establishment)
-    ]);
-
-    if (!schedule) {
-        console.error('❌ No se pudo obtener el horario del establecimiento.');
-        return;
-    }
-
-    if (!products) {
-        console.error('❌ No se pudieron obtener los productos del establecimiento.');
-        return;
-    }
-
-    if (!menus) {
-        console.error('❌ No se pudieron obtener los menús del establecimiento.');
-        return;
-    }
-
-    console.log('🏪 Datos del establecimiento:');
-    console.log(`${establishment.id_establishment} - ${establishment.name}`);
-    console.log(`📍 Dirección: ${establishment.address}`);
-    console.log(`📞 Teléfono: ${establishment.phone_number}`);
-    console.log(`Ratio de pedidos: ${establishment.order_ratio}`);
-    console.log('🗓️ Horario:');
-    schedule.forEach(day => {
-        console.log(`  - ${day.name}: ${day.is_open ? 'Abierto' : 'Cerrado'}`);
-        if (day.is_open && day.session_schedule) {
-            day.session_schedule.forEach(session => {
-                console.log(`    Horario: ${session.opening_time} - ${session.closing_time}`);
-            });
-        }
-    });
-    console.log('🛍️ Productos:');
-    products.forEach(product => {
-        console.log(`  - [${product.id_product}] ${product.name} (${product.category}): ${product.price} €`);
-    });
-    console.log('🍽️ Menús:');
-    menus.forEach(menu => {
-        console.log(`  - ${menu.name} (${JSON.stringify(menu.category_requirements)}): ${menu.price} €`);
-        console.log('    Productos:');
-        menu.menu_product.forEach(menuProduct => {
-            console.log(`      - [${menuProduct.id_product}]`);
-        });
-    });
+    return { data, error, status };
 }
 
-export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment };
+const insertDetailsOrder = async (details: DetailsOrder): Promise<any> => {
+    const { data, error, status } = await supabase
+        .from('details_order')
+        .insert(details)
+        .select();
+
+    return { data, error, status };
+}
+
+export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment, insertOrder, insertDetailsOrder };
