@@ -76,6 +76,41 @@ const getMenusEstablishment = async (establishmentId: string): Promise<MenusData
     return data as MenusData[];
 }
 
+const getOrderWithDetailsOrder = async (orderId: string): Promise<OrderData & { details_order: DetailsOrder[] } | null> => {
+    const { data, error } = await supabase
+        .from('orders')
+        .select(`
+            *,
+            details_order (
+                *
+            )
+        `)
+        .eq('id_order', orderId)
+        .single();
+
+    if (error) {
+        console.error('❌ Error al obtener la orden con detalles:', error);
+        return null;
+    }
+
+    return data as OrderData & { details_order: DetailsOrder[] };
+}
+
+const getProduct = async (productId: string): Promise<ProductData | null> => {
+    const { data, error } = await supabase
+        .from('products')
+        .select()
+        .eq('id_product', productId)
+        .single();
+
+    if (error) {
+        console.error('❌ Error al obtener el producto:', error);
+        return null;
+    }
+
+    return data as ProductData;
+}
+
 const loadHistoryRows = async (idChat: string): Promise<MessageData[] | null> => {
     const { data, error } = await supabase
         .from('messages')
@@ -118,4 +153,4 @@ const saveMessage = async (message: MessageInsert) => {
     return { data, error };
 }
 
-export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment, insertOrder, insertDetailsOrder, saveMessage, loadHistoryRows };
+export { getEstablishmentData, getScheduleEstablishment, getProductsEstablishment, getMenusEstablishment, insertOrder, insertDetailsOrder, saveMessage, loadHistoryRows, getOrderWithDetailsOrder };

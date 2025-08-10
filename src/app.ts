@@ -14,6 +14,7 @@ import { insertDetailsOrder, insertOrder, loadHistoryRows, saveMessage } from '.
 
 import { buildSnapshot, type Snapshot } from './snapshot.js';
 import { rowsToGenAiHistory } from '../utils/services/history-mapping.js';
+import { writeFileSync } from 'fs';
 
 // ======================
 // IDs inyectados (ENV/UI/cliente)
@@ -153,7 +154,7 @@ async function main() {
     const ai = new GoogleGenAI({ apiKey });
 
     const rows = await loadHistoryRows(idChatFromClient);
-    const history = rowsToGenAiHistory((rows ?? []).map(r => ({ role: r.role, message: r.message })));
+    const history = rowsToGenAiHistory((rows ?? []).map(r => ({ role: r.role, parts: r.parts })));
 
     const chat = ai.chats.create({
         model: 'gemini-2.0-flash',
@@ -213,36 +214,26 @@ async function main() {
                 console.log(`🔧 Ejecutando función: ${functionCall.name}`);
 
                 if (functionCall.name === 'get_establishment_snapshot') {
+                    await saveMessage({ id_chat: idChatFromClient, role: 'model', parts: [{ functionCall: { name: functionCall.name, args: functionCall.args } }] })
                     try {
                         const snapshot = await buildSnapshot(idEstablishmentFromClient);
                         lastSnapshot = snapshot; // cachea
                         parts.push({ functionResponse: { name: functionCall.name, response: snapshot as unknown as Record<string, unknown> } });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({ name: functionCall.name, response: snapshot }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: snapshot } }] });
                         console.log(`📦 Snapshot enviado: ${snapshot.name} (${snapshot.id_establishment}) @ ${snapshot.updated_at}\n`);
                     } catch (e) {
                         console.error('❌ Error construyendo snapshot:', e);
                         parts.push({ functionResponse: { name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } } });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({ name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { error: 'SNAPSHOT_UNAVAILABLE' } } }] });
                     }
                 }
 
                 else if (functionCall.name === 'add_order') {
+                    await saveMessage({ id_chat: idChatFromClient, role: 'model', parts: [{ functionCall: { name: functionCall.name, args: functionCall.args } }] })
                     if (currentOrderId) {
                         console.warn('⚠️ Ya hay un pedido activo. No se puede crear otro hasta completar el actual.');
                         parts.push({ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({ name: functionCall.name, response: { id_order: currentOrderId } }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } }] });
                         continue;
                     }
 
@@ -266,11 +257,7 @@ async function main() {
                     if (!safeArgs.is_pickup && !safeArgs.address) {
                         // Opción B: rechazas si falta dirección en delivery
                         parts.push({ functionResponse: { name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } } });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({ name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { success: false, error: 'Falta dirección para entrega a domicilio.' } } }] });
                         continue;
                     }
 
@@ -281,26 +268,19 @@ async function main() {
                     if (status !== 201) {
                         console.error('❌ Error creando pedido:', JSON.stringify(error, null, 2));
                         parts.push({ functionResponse: { name: functionCall.name, response: { success: false, error: error.message } } });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({ name: functionCall.name, response: { success: false, error: error.message } }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { success: false, error: error.message } } }] });
                         continue;
                     }
 
                     currentOrderId = data[0].id_order; // guarda el ID del pedido actual
 
                     parts.push({ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } });
-                    await saveMessage({
-                        id_chat: idChatFromClient,
-                        role: 'function',
-                        message: JSON.stringify({ name: functionCall.name, response: { id_order: currentOrderId } }),
-                    });
+                    await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { id_order: currentOrderId } } }] });
 
                     console.log(`✅ Pedido creado | id_order=${currentOrderId} | id_chat=${safeArgs.id_chat} | id_establishment=${safeArgs.id_establishment}\n`);
                 }
                 else if (functionCall.name === 'add_details_order') {
+                    await saveMessage({ id_chat: idChatFromClient, role: 'model', parts: [{ functionCall: { name: functionCall.name, args: functionCall.args } }] });
                     console.log('🍨 add_details_order(args):', JSON.stringify(functionCall.args, null, 2));
 
                     const args = functionCall.args as any;
@@ -313,14 +293,8 @@ async function main() {
                                 response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' },
                             },
                         });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({
-                                name: functionCall.name,
-                                response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' },
-                            }),
-                        });
+
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { success: false, message: 'No hay pedido abierto. Crea uno con add_order.' } } }] });
                         continue;
                     }
                     // Fuerza que todos los detalles apunten al pedido abierto
@@ -351,14 +325,7 @@ async function main() {
                                 response: { success: false, message: validation.error },
                             },
                         });
-                        await saveMessage({
-                            id_chat: idChatFromClient,
-                            role: 'function',
-                            message: JSON.stringify({
-                                name: functionCall.name,
-                                response: { success: false, message: validation.error },
-                            }),
-                        });
+                        await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: { success: false, message: validation.error } } }] });
                         continue;
                     }
 
@@ -370,12 +337,7 @@ async function main() {
                         ? { success: false, error: error.message }
                         : { success: true, message: 'Detalles del pedido añadidos correctamente' };
                     parts.push({ functionResponse: { name: functionCall.name, response: resp } });
-                    await saveMessage({
-                        id_chat: idChatFromClient,
-                        role: 'function',
-                        message: JSON.stringify({ name: functionCall.name, response: resp }),
-                    });
-
+                    await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ functionResponse: { name: functionCall.name, response: resp } }] });
                     console.log('✅ Detalles del pedido añadidos correctamente\n');
                 }
             }
@@ -388,20 +350,30 @@ async function main() {
         }
         if (response.text) {
             console.log(`🤖 Asistente: ${response.text}\n`);
-            await saveMessage({ id_chat: idChatFromClient, role: 'model', message: response.text });
+            await saveMessage({ id_chat: idChatFromClient, role: 'model', parts: [{ text: response.text }] });
         }
         return response;
     }
 
     // -------- Mensaje inicial (y procesar su respuesta) --------
-    let initResp = await chat.sendMessage({
-        message: 'Por favor, consulta el estado actual del establecimiento antes de empezar.',
-    });
-    if (!initResp.functionCalls || initResp.functionCalls.length === 0) {
-        console.log('ℹ️ El modelo no solicitó snapshot todavía en el mensaje inicial.');
-    }
-    await handleFunctionCalls(initResp);
 
+    // Antes de enviar initResp
+    const hasRecentSnapshot = history.some(msg =>
+        msg.role === 'user' &&
+        msg.parts?.some(p =>
+            p.functionResponse?.name === 'get_establishment_snapshot'
+        )
+    );
+
+    if (!hasRecentSnapshot) {
+        let initResp = await chat.sendMessage({
+            message: 'Por favor, consulta el estado actual del establecimiento antes de empezar.',
+        });
+        if (!initResp.functionCalls || initResp.functionCalls.length === 0) {
+            console.log('ℹ️ El modelo no solicitó snapshot todavía en el mensaje inicial.');
+        }
+        await handleFunctionCalls(initResp);
+    }
     // -------- Loop CLI con debounce --------
     let debounceTimeout: NodeJS.Timeout | null = null;
     let mensajesAcumulados: string[] = [];
@@ -413,11 +385,7 @@ async function main() {
         mensajesAcumulados = [];
 
         try {
-            await saveMessage({
-                id_chat: idChatFromClient,
-                role: 'user',
-                message: mensajeCompleto,
-            });
+            await saveMessage({ id_chat: idChatFromClient, role: 'user', parts: [{ text: mensajeCompleto }] });
             let response = await chat.sendMessage({ message: mensajeCompleto });
             await handleFunctionCalls(response);
         } catch (error) {
@@ -442,6 +410,8 @@ async function main() {
                     await procesarMensajes();
                 }
                 console.log('👋 ¡Hasta la vista! ¡Vuelve pronto!');
+                const history = chat.getHistory(true);
+                writeFileSync('historial_chat_curated.json', JSON.stringify(history, null, 2), 'utf-8');
                 break;
             }
 

@@ -1,0 +1,2454 @@
+[
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Por favor, consulta el estado actual del establecimiento antes de empezar."
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "functionCall": {
+          "name": "get_establishment_snapshot",
+          "args": {
+            "id_establishment": "c7831588-4953-40c5-bdcf-02809d8a2370"
+          }
+        }
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "functionResponse": {
+          "name": "get_establishment_snapshot",
+          "response": {
+            "id_establishment": "c7831588-4953-40c5-bdcf-02809d8a2370",
+            "name": "Restaurante Almería Doner Kebab",
+            "address": "Calle Canónigo Molina Alonso, 31, 04004 Almería",
+            "phone": "950933758",
+            "order_ratio": 5,
+            "hours": [
+              {
+                "day": "Domingo",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              },
+              {
+                "day": "Jueves",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              },
+              {
+                "day": "Lunes",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              },
+              {
+                "day": "Martes",
+                "open": true
+              },
+              {
+                "day": "Miércoles",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              },
+              {
+                "day": "Sábado",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              },
+              {
+                "day": "Viernes",
+                "open": true,
+                "sessions": [
+                  {
+                    "from": "00:00:00",
+                    "to": "23:59:00"
+                  }
+                ]
+              }
+            ],
+            "products": [
+              {
+                "id": "76906d9a-91e4-47f7-9d47-a7c9ce392d54",
+                "name": "Döner Kebab Ternera",
+                "category": "main",
+                "price": 5.5
+              },
+              {
+                "id": "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece",
+                "name": "Döner Kebab Pollo",
+                "category": "main",
+                "price": 5.5
+              },
+              {
+                "id": "8d39f286-a255-4e3c-b8b1-7e822e543d40",
+                "name": "Döner Dürüm Ternera",
+                "category": "main",
+                "price": 5.5
+              },
+              {
+                "id": "9d76115b-394d-453f-8f15-f8c011a7cb20",
+                "name": "Döner Dürüm Pollo",
+                "category": "main",
+                "price": 5.5
+              },
+              {
+                "id": "b398c6b2-22f1-4cf4-8049-7a8397e47eb1",
+                "name": "Döner Dürüm Ternera, Grande",
+                "category": "main",
+                "price": 6.5
+              },
+              {
+                "id": "ca77a0b7-3e91-43d3-a3e6-34f2a119088c",
+                "name": "Döner Dürüm Pollo, Grande",
+                "category": "main",
+                "price": 6.5
+              },
+              {
+                "id": "c52ae446-80a1-46a7-ad5f-de2f7edf2344",
+                "name": "Döner Kebab Mixto",
+                "category": "main",
+                "price": 6
+              },
+              {
+                "id": "78d6bd63-9d34-4961-80d1-253e621caded",
+                "name": "Döner Dürüm Mixto",
+                "category": "main",
+                "price": 6
+              },
+              {
+                "id": "534cac3d-509d-4c1f-bbba-666f83c9b66a",
+                "name": "Döner Kebab Especial",
+                "category": "main",
+                "price": 7
+              },
+              {
+                "id": "c8b7eeb0-d61c-4d6c-a550-1b16bf7490d3",
+                "name": "Döner Dürüm Especial",
+                "category": "main",
+                "price": 7
+              },
+              {
+                "id": "c0152da7-bac3-43b0-b454-ddcfe4fa4063",
+                "name": "Döner Kebab Completo",
+                "category": "main",
+                "price": 7.5
+              },
+              {
+                "id": "ba4ab9de-29d6-427d-9fb3-fb3d3dd78e5e",
+                "name": "Döner Dürüm Completo",
+                "category": "main",
+                "price": 7.5
+              },
+              {
+                "id": "ecf9313e-7388-4b8a-a6e8-ac635ff1c08b",
+                "name": "Döner Kebab Vegetariano",
+                "category": "main",
+                "price": 5
+              },
+              {
+                "id": "deca6f7d-1b64-46f1-bb0a-f35f2b1b4ffa",
+                "name": "Döner Dürüm Vegetariano",
+                "category": "main",
+                "price": 5
+              },
+              {
+                "id": "708d880d-73d1-4b0e-898e-37b333d4e851",
+                "name": "Pizza Turca Pollo",
+                "category": "main",
+                "price": 6
+              },
+              {
+                "id": "d40f09ad-3439-4439-8512-2883af725dea",
+                "name": "Pizza Turca Ternera",
+                "category": "main",
+                "price": 6
+              },
+              {
+                "id": "30c2d349-fb6a-41fb-8a88-c0580bbeba5c",
+                "name": "Pizza Turca Mixta",
+                "category": "main",
+                "price": 6
+              },
+              {
+                "id": "3c355780-fce7-46bf-aa9c-4daec4870eac",
+                "name": "Pizza Turca solo Carne",
+                "category": "main",
+                "price": 7
+              },
+              {
+                "id": "e61724e1-2bac-43bf-b72e-aef6615c7d31",
+                "name": "Plato Pollo con Arroz",
+                "category": "main",
+                "price": 7.5
+              },
+              {
+                "id": "2273b570-7583-43e0-bd50-9360c6eb1506",
+                "name": "Plato Ternera con Arroz",
+                "category": "main",
+                "price": 7.5
+              },
+              {
+                "id": "2a36faea-8366-4a1d-9f03-4d3d465bd315",
+                "name": "Pollo, Patatas y Ensalada con Arroz",
+                "category": "main",
+                "price": 7
+              },
+              {
+                "id": "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                "name": "Plato Pollo y Patatas",
+                "category": "main",
+                "price": 6.5
+              },
+              {
+                "id": "5c01b931-b917-4c76-b1de-e6bb51958ffb",
+                "name": "Plato Ternera y Patatas",
+                "category": "main",
+                "price": 6.5
+              },
+              {
+                "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                "name": "Patatas Fritas",
+                "category": "side",
+                "price": 2.5
+              },
+              {
+                "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                "name": "Coca Cola, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                "name": "Coca Cola Zero, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                "name": "Fanta Naranja, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                "name": "Fanta Limón, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                "name": "Pepsi Regular Refresco de Cola Lata 330ml",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                "name": "Sprite, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                "name": "Aquarius Limón, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                "name": "Aquarius Naranja, Lata",
+                "category": "drink",
+                "price": 1.7
+              },
+              {
+                "id": "bb6ce2f5-044e-4d7e-a01b-d8a2721c54e2",
+                "name": "Coca Cola, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              {
+                "id": "b5386da6-61f7-4908-9cf4-0f62db595066",
+                "name": "Fanta Naranja, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              {
+                "id": "dc10d758-1186-419d-8aa4-c9df33fe6af8",
+                "name": "Fanta Limón, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              {
+                "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                "name": "Agua, 1.5L",
+                "category": "drink",
+                "price": 1.5
+              },
+              {
+                "id": "23f774bc-3f7e-4700-93ea-aa79b29d7712",
+                "name": "Plato Mixto solo Carne y con queso",
+                "category": "main",
+                "price": 7.5
+              }
+            ],
+            "products_index": {
+              "76906d9a-91e4-47f7-9d47-a7c9ce392d54": {
+                "name": "Döner Kebab Ternera",
+                "category": "main",
+                "price": 5.5
+              },
+              "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece": {
+                "name": "Döner Kebab Pollo",
+                "category": "main",
+                "price": 5.5
+              },
+              "8d39f286-a255-4e3c-b8b1-7e822e543d40": {
+                "name": "Döner Dürüm Ternera",
+                "category": "main",
+                "price": 5.5
+              },
+              "9d76115b-394d-453f-8f15-f8c011a7cb20": {
+                "name": "Döner Dürüm Pollo",
+                "category": "main",
+                "price": 5.5
+              },
+              "b398c6b2-22f1-4cf4-8049-7a8397e47eb1": {
+                "name": "Döner Dürüm Ternera, Grande",
+                "category": "main",
+                "price": 6.5
+              },
+              "ca77a0b7-3e91-43d3-a3e6-34f2a119088c": {
+                "name": "Döner Dürüm Pollo, Grande",
+                "category": "main",
+                "price": 6.5
+              },
+              "c52ae446-80a1-46a7-ad5f-de2f7edf2344": {
+                "name": "Döner Kebab Mixto",
+                "category": "main",
+                "price": 6
+              },
+              "78d6bd63-9d34-4961-80d1-253e621caded": {
+                "name": "Döner Dürüm Mixto",
+                "category": "main",
+                "price": 6
+              },
+              "534cac3d-509d-4c1f-bbba-666f83c9b66a": {
+                "name": "Döner Kebab Especial",
+                "category": "main",
+                "price": 7
+              },
+              "c8b7eeb0-d61c-4d6c-a550-1b16bf7490d3": {
+                "name": "Döner Dürüm Especial",
+                "category": "main",
+                "price": 7
+              },
+              "c0152da7-bac3-43b0-b454-ddcfe4fa4063": {
+                "name": "Döner Kebab Completo",
+                "category": "main",
+                "price": 7.5
+              },
+              "ba4ab9de-29d6-427d-9fb3-fb3d3dd78e5e": {
+                "name": "Döner Dürüm Completo",
+                "category": "main",
+                "price": 7.5
+              },
+              "ecf9313e-7388-4b8a-a6e8-ac635ff1c08b": {
+                "name": "Döner Kebab Vegetariano",
+                "category": "main",
+                "price": 5
+              },
+              "deca6f7d-1b64-46f1-bb0a-f35f2b1b4ffa": {
+                "name": "Döner Dürüm Vegetariano",
+                "category": "main",
+                "price": 5
+              },
+              "708d880d-73d1-4b0e-898e-37b333d4e851": {
+                "name": "Pizza Turca Pollo",
+                "category": "main",
+                "price": 6
+              },
+              "d40f09ad-3439-4439-8512-2883af725dea": {
+                "name": "Pizza Turca Ternera",
+                "category": "main",
+                "price": 6
+              },
+              "30c2d349-fb6a-41fb-8a88-c0580bbeba5c": {
+                "name": "Pizza Turca Mixta",
+                "category": "main",
+                "price": 6
+              },
+              "3c355780-fce7-46bf-aa9c-4daec4870eac": {
+                "name": "Pizza Turca solo Carne",
+                "category": "main",
+                "price": 7
+              },
+              "e61724e1-2bac-43bf-b72e-aef6615c7d31": {
+                "name": "Plato Pollo con Arroz",
+                "category": "main",
+                "price": 7.5
+              },
+              "2273b570-7583-43e0-bd50-9360c6eb1506": {
+                "name": "Plato Ternera con Arroz",
+                "category": "main",
+                "price": 7.5
+              },
+              "2a36faea-8366-4a1d-9f03-4d3d465bd315": {
+                "name": "Pollo, Patatas y Ensalada con Arroz",
+                "category": "main",
+                "price": 7
+              },
+              "6b17d331-e716-410b-81ce-6a8ea31a101e": {
+                "name": "Plato Pollo y Patatas",
+                "category": "main",
+                "price": 6.5
+              },
+              "5c01b931-b917-4c76-b1de-e6bb51958ffb": {
+                "name": "Plato Ternera y Patatas",
+                "category": "main",
+                "price": 6.5
+              },
+              "e603076d-8687-4db7-a16f-ca34b2f11d3a": {
+                "name": "Patatas Fritas",
+                "category": "side",
+                "price": 2.5
+              },
+              "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7": {
+                "name": "Coca Cola, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "4a3be4ac-871d-4b5a-906d-df38496b1640": {
+                "name": "Coca Cola Zero, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "091acbbc-85ed-43ee-b5db-c49b3f35409a": {
+                "name": "Fanta Naranja, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "4d72bf79-a849-4474-bdfa-8a6232d3fc40": {
+                "name": "Fanta Limón, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "ae4096a7-7969-43d2-b106-2b87b41ae5c4": {
+                "name": "Pepsi Regular Refresco de Cola Lata 330ml",
+                "category": "drink",
+                "price": 1.5
+              },
+              "fbec2261-8eb2-4d24-ae56-9dfd16388d5d": {
+                "name": "Sprite, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b": {
+                "name": "Aquarius Limón, Lata",
+                "category": "drink",
+                "price": 1.5
+              },
+              "f6ffbb72-a224-4506-b562-2d79b667b18d": {
+                "name": "Aquarius Naranja, Lata",
+                "category": "drink",
+                "price": 1.7
+              },
+              "bb6ce2f5-044e-4d7e-a01b-d8a2721c54e2": {
+                "name": "Coca Cola, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              "b5386da6-61f7-4908-9cf4-0f62db595066": {
+                "name": "Fanta Naranja, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              "dc10d758-1186-419d-8aa4-c9df33fe6af8": {
+                "name": "Fanta Limón, 2L",
+                "category": "drink",
+                "price": 2.5
+              },
+              "da9b6578-8507-4000-9fff-369375acfc13": {
+                "name": "Agua, 1.5L",
+                "category": "drink",
+                "price": 1.5
+              },
+              "23f774bc-3f7e-4700-93ea-aa79b29d7712": {
+                "name": "Plato Mixto solo Carne y con queso",
+                "category": "main",
+                "price": 7.5
+              }
+            },
+            "menus": [
+              {
+                "id": "75a63c1a-961e-40fb-ac7b-f618f20e6990",
+                "name": "Döner Kebab Ternera",
+                "price": 7.5,
+                "description": "Kebab de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "76906d9a-91e4-47f7-9d47-a7c9ce392d54",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "76906d9a-91e4-47f7-9d47-a7c9ce392d54",
+                      "name": "Döner Kebab Ternera"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "b01e4dbd-d618-4efd-a444-3da7b30230e6",
+                "name": "Döner Kebab Pollo",
+                "price": 7.5,
+                "description": "Kebab de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece",
+                      "name": "Döner Kebab Pollo"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "0dad18bb-7efe-4166-a1d3-d445c608db21",
+                "name": "Döner Dürüm Ternera",
+                "price": 7.5,
+                "description": "Dürüm de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "8d39f286-a255-4e3c-b8b1-7e822e543d40",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "8d39f286-a255-4e3c-b8b1-7e822e543d40",
+                      "name": "Döner Dürüm Ternera"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "8dfe59f7-a3c1-42af-aaf5-95b56072bbb6",
+                "name": "Döner Dürüm Pollo",
+                "price": 7.5,
+                "description": "Dürüm de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "9d76115b-394d-453f-8f15-f8c011a7cb20",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "9d76115b-394d-453f-8f15-f8c011a7cb20",
+                      "name": "Döner Dürüm Pollo"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "b8e1f8ff-0342-4aca-add0-df4f2e31340d",
+                "name": "Plato Ternera, patatas y ensalada",
+                "price": 8.5,
+                "description": "Plato completo con ternera, patatas y ensalada",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "2a36faea-8366-4a1d-9f03-4d3d465bd315",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "2a36faea-8366-4a1d-9f03-4d3d465bd315",
+                      "name": "Pollo, Patatas y Ensalada con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "478e579c-22a1-49a5-b9f3-aa7384d9db60",
+                "name": "Plato de Ternera y patatas",
+                "price": 8,
+                "description": "Plato de ternera con patatas",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "5c01b931-b917-4c76-b1de-e6bb51958ffb",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "5c01b931-b917-4c76-b1de-e6bb51958ffb",
+                      "name": "Plato Ternera y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "3b8cb566-ada2-41de-8fda-b60789470ff9",
+                "name": "Plato Pollo y arroz",
+                "price": 8,
+                "description": "Plato de pollo con arroz",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "e61724e1-2bac-43bf-b72e-aef6615c7d31",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "e61724e1-2bac-43bf-b72e-aef6615c7d31",
+                      "name": "Plato Pollo con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "9860373d-e9f8-41cf-a7f0-88fed0d48efb",
+                "name": "Plato Pollo, patatas y ensalada",
+                "price": 7,
+                "description": "Plato de pollo con patatas y ensalada",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                      "name": "Plato Pollo y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "11252da1-3367-404c-a00c-d2cbe092fded",
+                "name": "Plato Pollo y patatas",
+                "price": 8,
+                "description": "Plato de pollo con patatas",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                      "name": "Plato Pollo y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "79a60203-4a5c-4f5e-b378-c8ab64ce8083",
+                "name": "Plato de Ternera y arroz",
+                "price": 8,
+                "description": "Plato de ternera con arroz",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "2273b570-7583-43e0-bd50-9360c6eb1506",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "2273b570-7583-43e0-bd50-9360c6eb1506",
+                      "name": "Plato Ternera con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "3ae16e5d-9b45-4791-8888-cceddf242ae1",
+                "name": "Döner Dürüm Ternera, Grande",
+                "price": 8.5,
+                "description": "Dürüm grande de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "b398c6b2-22f1-4cf4-8049-7a8397e47eb1",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "b398c6b2-22f1-4cf4-8049-7a8397e47eb1",
+                      "name": "Döner Dürüm Ternera, Grande"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "9365acee-087a-4d73-a974-4828d8aa3177",
+                "name": "Döner Dürüm Pollo, Grande",
+                "price": 8.5,
+                "description": "Dürüm grande de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "ca77a0b7-3e91-43d3-a3e6-34f2a119088c",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "ca77a0b7-3e91-43d3-a3e6-34f2a119088c",
+                      "name": "Döner Dürüm Pollo, Grande"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              }
+            ],
+            "menus_index_by_id": {
+              "75a63c1a-961e-40fb-ac7b-f618f20e6990": {
+                "id": "75a63c1a-961e-40fb-ac7b-f618f20e6990",
+                "name": "Döner Kebab Ternera",
+                "price": 7.5,
+                "description": "Kebab de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "76906d9a-91e4-47f7-9d47-a7c9ce392d54",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "76906d9a-91e4-47f7-9d47-a7c9ce392d54",
+                      "name": "Döner Kebab Ternera"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "b01e4dbd-d618-4efd-a444-3da7b30230e6": {
+                "id": "b01e4dbd-d618-4efd-a444-3da7b30230e6",
+                "name": "Döner Kebab Pollo",
+                "price": 7.5,
+                "description": "Kebab de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "c0c0c6b1-0f56-4cc4-a068-64504d5e1ece",
+                      "name": "Döner Kebab Pollo"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "0dad18bb-7efe-4166-a1d3-d445c608db21": {
+                "id": "0dad18bb-7efe-4166-a1d3-d445c608db21",
+                "name": "Döner Dürüm Ternera",
+                "price": 7.5,
+                "description": "Dürüm de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "8d39f286-a255-4e3c-b8b1-7e822e543d40",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "8d39f286-a255-4e3c-b8b1-7e822e543d40",
+                      "name": "Döner Dürüm Ternera"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "8dfe59f7-a3c1-42af-aaf5-95b56072bbb6": {
+                "id": "8dfe59f7-a3c1-42af-aaf5-95b56072bbb6",
+                "name": "Döner Dürüm Pollo",
+                "price": 7.5,
+                "description": "Dürüm de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "9d76115b-394d-453f-8f15-f8c011a7cb20",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "9d76115b-394d-453f-8f15-f8c011a7cb20",
+                      "name": "Döner Dürüm Pollo"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "b8e1f8ff-0342-4aca-add0-df4f2e31340d": {
+                "id": "b8e1f8ff-0342-4aca-add0-df4f2e31340d",
+                "name": "Plato Ternera, patatas y ensalada",
+                "price": 8.5,
+                "description": "Plato completo con ternera, patatas y ensalada",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "2a36faea-8366-4a1d-9f03-4d3d465bd315",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "2a36faea-8366-4a1d-9f03-4d3d465bd315",
+                      "name": "Pollo, Patatas y Ensalada con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "478e579c-22a1-49a5-b9f3-aa7384d9db60": {
+                "id": "478e579c-22a1-49a5-b9f3-aa7384d9db60",
+                "name": "Plato de Ternera y patatas",
+                "price": 8,
+                "description": "Plato de ternera con patatas",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "5c01b931-b917-4c76-b1de-e6bb51958ffb",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "5c01b931-b917-4c76-b1de-e6bb51958ffb",
+                      "name": "Plato Ternera y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "3b8cb566-ada2-41de-8fda-b60789470ff9": {
+                "id": "3b8cb566-ada2-41de-8fda-b60789470ff9",
+                "name": "Plato Pollo y arroz",
+                "price": 8,
+                "description": "Plato de pollo con arroz",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "e61724e1-2bac-43bf-b72e-aef6615c7d31",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "e61724e1-2bac-43bf-b72e-aef6615c7d31",
+                      "name": "Plato Pollo con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "9860373d-e9f8-41cf-a7f0-88fed0d48efb": {
+                "id": "9860373d-e9f8-41cf-a7f0-88fed0d48efb",
+                "name": "Plato Pollo, patatas y ensalada",
+                "price": 7,
+                "description": "Plato de pollo con patatas y ensalada",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                      "name": "Plato Pollo y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "11252da1-3367-404c-a00c-d2cbe092fded": {
+                "id": "11252da1-3367-404c-a00c-d2cbe092fded",
+                "name": "Plato Pollo y patatas",
+                "price": 8,
+                "description": "Plato de pollo con patatas",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "6b17d331-e716-410b-81ce-6a8ea31a101e",
+                      "name": "Plato Pollo y Patatas"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "79a60203-4a5c-4f5e-b378-c8ab64ce8083": {
+                "id": "79a60203-4a5c-4f5e-b378-c8ab64ce8083",
+                "name": "Plato de Ternera y arroz",
+                "price": 8,
+                "description": "Plato de ternera con arroz",
+                "composition": {
+                  "main": 1
+                },
+                "allowed_product_ids": [
+                  "2273b570-7583-43e0-bd50-9360c6eb1506",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "2273b570-7583-43e0-bd50-9360c6eb1506",
+                      "name": "Plato Ternera con Arroz"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "3ae16e5d-9b45-4791-8888-cceddf242ae1": {
+                "id": "3ae16e5d-9b45-4791-8888-cceddf242ae1",
+                "name": "Döner Dürüm Ternera, Grande",
+                "price": 8.5,
+                "description": "Dürüm grande de ternera con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "b398c6b2-22f1-4cf4-8049-7a8397e47eb1",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "b398c6b2-22f1-4cf4-8049-7a8397e47eb1",
+                      "name": "Döner Dürüm Ternera, Grande"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              },
+              "9365acee-087a-4d73-a974-4828d8aa3177": {
+                "id": "9365acee-087a-4d73-a974-4828d8aa3177",
+                "name": "Döner Dürüm Pollo, Grande",
+                "price": 8.5,
+                "description": "Dürüm grande de pollo con patatas y refresco incluidos",
+                "composition": {
+                  "main": 1,
+                  "side": 1,
+                  "drink": 1
+                },
+                "allowed_product_ids": [
+                  "ca77a0b7-3e91-43d3-a3e6-34f2a119088c",
+                  "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                  "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                  "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                  "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                  "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                  "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                  "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                  "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                  "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                  "da9b6578-8507-4000-9fff-369375acfc13"
+                ],
+                "options_by_category": {
+                  "main": [
+                    {
+                      "id": "ca77a0b7-3e91-43d3-a3e6-34f2a119088c",
+                      "name": "Döner Dürüm Pollo, Grande"
+                    }
+                  ],
+                  "side": [
+                    {
+                      "id": "e603076d-8687-4db7-a16f-ca34b2f11d3a",
+                      "name": "Patatas Fritas"
+                    }
+                  ],
+                  "drink": [
+                    {
+                      "id": "5ff6fe20-f4e4-4e6b-b8d3-d84eb1f6fdb7",
+                      "name": "Coca Cola, Lata"
+                    },
+                    {
+                      "id": "4a3be4ac-871d-4b5a-906d-df38496b1640",
+                      "name": "Coca Cola Zero, Lata"
+                    },
+                    {
+                      "id": "091acbbc-85ed-43ee-b5db-c49b3f35409a",
+                      "name": "Fanta Naranja, Lata"
+                    },
+                    {
+                      "id": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                      "name": "Fanta Limón, Lata"
+                    },
+                    {
+                      "id": "ae4096a7-7969-43d2-b106-2b87b41ae5c4",
+                      "name": "Pepsi Regular Refresco de Cola Lata 330ml"
+                    },
+                    {
+                      "id": "fbec2261-8eb2-4d24-ae56-9dfd16388d5d",
+                      "name": "Sprite, Lata"
+                    },
+                    {
+                      "id": "101a1307-b5f6-4ab1-bc34-6ef1f7343d6b",
+                      "name": "Aquarius Limón, Lata"
+                    },
+                    {
+                      "id": "f6ffbb72-a224-4506-b562-2d79b667b18d",
+                      "name": "Aquarius Naranja, Lata"
+                    },
+                    {
+                      "id": "da9b6578-8507-4000-9fff-369375acfc13",
+                      "name": "Agua, 1.5L"
+                    }
+                  ]
+                }
+              }
+            },
+            "menus_index_by_name": {
+              "döner kebab ternera": "75a63c1a-961e-40fb-ac7b-f618f20e6990",
+              "döner kebab pollo": "b01e4dbd-d618-4efd-a444-3da7b30230e6",
+              "döner dürüm ternera": "0dad18bb-7efe-4166-a1d3-d445c608db21",
+              "döner dürüm pollo": "8dfe59f7-a3c1-42af-aaf5-95b56072bbb6",
+              "plato ternera, patatas y ensalada": "b8e1f8ff-0342-4aca-add0-df4f2e31340d",
+              "plato de ternera y patatas": "478e579c-22a1-49a5-b9f3-aa7384d9db60",
+              "plato pollo y arroz": "3b8cb566-ada2-41de-8fda-b60789470ff9",
+              "plato pollo, patatas y ensalada": "9860373d-e9f8-41cf-a7f0-88fed0d48efb",
+              "plato pollo y patatas": "11252da1-3367-404c-a00c-d2cbe092fded",
+              "plato de ternera y arroz": "79a60203-4a5c-4f5e-b378-c8ab64ce8083",
+              "döner dürüm ternera, grande": "3ae16e5d-9b45-4791-8888-cceddf242ae1",
+              "döner dürüm pollo, grande": "9365acee-087a-4d73-a974-4828d8aa3177"
+            },
+            "updated_at": "2025-08-10T09:12:51.303Z"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "¡Hola! ¿Qué te apetece pedir hoy? Tenemos Döner Kebab, Dürüm, platos combinados y más.\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "solo quiero una fanta limon para recoger a nombre de sebas "
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Perfecto, una Fanta Limón. ¿Algo más? ¿Sería para recoger aquí en \"Restaurante Almería Doner Kebab\"?\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "solo eso "
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Genial Sebas. Entonces, ¿una Fanta Limón para recoger? Confirma por favor.\n"
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "si"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "functionCall": {
+          "name": "add_order",
+          "args": {
+            "id_establishment": "c7831588-4953-40c5-bdcf-02809d8a2370",
+            "name": "Sebas",
+            "is_pickup": true,
+            "id_chat": "855e9331-7bb6-434c-81e6-56d951f6116b"
+          }
+        }
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "functionResponse": {
+          "name": "add_order",
+          "response": {
+            "id_order": "86125381-4e81-4e09-82f1-12f48bdfcb02"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "functionCall": {
+          "name": "add_details_order",
+          "args": {
+            "details": [
+              {
+                "id_product": "4d72bf79-a849-4474-bdfa-8a6232d3fc40",
+                "id_order": "86125381-4e81-4e09-82f1-12f48bdfcb02",
+                "quantity": 1
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "functionResponse": {
+          "name": "add_details_order",
+          "response": {
+            "success": true,
+            "message": "Detalles del pedido añadidos correctamente"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "¡Pedido confirmado! Una Fanta Limón para recoger a nombre de Sebas. En breve estará listo. ¡Gracias!\n"
+      }
+    ],
+    "role": "model"
+  }
+]
